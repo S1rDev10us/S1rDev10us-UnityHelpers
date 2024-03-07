@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using JetBrains.Annotations;
+using UnityEngine;
 
 public static class AsyncOperationExtensions {
     /// <summary>
