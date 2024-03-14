@@ -1,7 +1,12 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-public static class Vector3Extensions {
+public static class VectorExtensions {
+	
+	#region Vector3
+
+	
+
 	/// <summary>
 	/// Adds the x, y and z input to the vector
 	/// </summary>
@@ -26,4 +31,37 @@ public static class Vector3Extensions {
 	public static Vector3 With(this Vector3 vector, float? x = null, float? y = null, float? z = null) {
 		return new Vector3(x??vector.x, y??vector.y, z??vector.z);
 	}
+	/// <summary>
+	/// Returns the vector with the magnitude constrained to be less than the input max which is 1 by default
+	/// </summary>
+	/// <param name="vector">The vector to constrained</param>
+	/// <param name="max">The maximium magnitude</param>
+	/// <returns>The constrained vector</returns>
+	[PublicApi]
+	public static Vector3 MaxMagnitude(this Vector3 vector, float max = 1) {
+		if (vector.magnitude > max) {
+			return vector.normalized * max;
+		}
+
+		return vector;
+	}
+	#endregion
+	
+	#region Vector2
+	/// <summary>
+	/// Returns the vector with the magnitude constrained to be less than the input max which is 1 by default
+	/// </summary>
+	/// <param name="vector">The vector to constrained</param>
+	/// <param name="max">The maximium magnitude</param>
+	/// <returns>The constrained vector</returns>
+	[PublicApi]
+	public static Vector2 MaxMagnitude(this Vector2 vector, float max = 1) {
+		if (vector.magnitude > max) {
+			return vector.normalized * max;
+		}
+
+		return vector;
+	}
+	#endregion
+	
 }
