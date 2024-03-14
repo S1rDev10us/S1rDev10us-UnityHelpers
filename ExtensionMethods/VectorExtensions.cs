@@ -37,7 +37,7 @@ public static class VectorExtensions {
 	/// <param name="vector">The vector to constrained</param>
 	/// <param name="max">The maximium magnitude</param>
 	/// <returns>The constrained vector</returns>
-	[PublicApi]
+	[PublicAPI]
 	public static Vector3 MaxMagnitude(this Vector3 vector, float max = 1) {
 		if (vector.magnitude > max) {
 			return vector.normalized * max;
@@ -54,7 +54,7 @@ public static class VectorExtensions {
 	/// <param name="vector">The vector to constrained</param>
 	/// <param name="max">The maximium magnitude</param>
 	/// <returns>The constrained vector</returns>
-	[PublicApi]
+	[PublicAPI]
 	public static Vector2 MaxMagnitude(this Vector2 vector, float max = 1) {
 		if (vector.magnitude > max) {
 			return vector.normalized * max;
