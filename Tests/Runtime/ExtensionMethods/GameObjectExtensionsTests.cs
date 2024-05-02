@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using NUnit.Framework;
+using S1rDev10us.UnityHelpers.ExtensionMethods;
 using UnityEngine;
 using UnityEngine.TestTools;
 

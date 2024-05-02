@@ -1,9 +1,9 @@
-﻿
-	using System.Collections;
-	using System.Threading.Tasks;
-	using JetBrains.Annotations;
-	using UnityEngine;
+﻿using System.Collections;
+using System.Threading.Tasks;
+using JetBrains.Annotations;
+using UnityEngine;
 
+namespace S1rDev10us.UnityHelpers.ExtensionMethods {
 	public static class TaskExtensions {
 		/// <summary>
 		/// Returns an async/await function/task as a coroutine
@@ -15,3 +15,4 @@
 			yield return new WaitUntil(() => task.IsCompleted);
 		}
 	}
+}

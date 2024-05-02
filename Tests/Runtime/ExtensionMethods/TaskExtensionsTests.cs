@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using S1rDev10us.UnityHelpers.ExtensionMethods;
 using UnityEngine.TestTools;
 
 namespace S1rDev10us.UnityHelpers.Tests.Runtime.ExtensionMethods {

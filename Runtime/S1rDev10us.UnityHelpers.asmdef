@@ -1,6 +1,9 @@
 ﻿{
   "name": "S1rDev10us.UnityHelpers",
-  "references": [],
+  "rootNamespace": "S1rDev10us.UnityHelpers",
+  "references": [
+
+  ],
   "includePlatforms": [],
   "excludePlatforms": [],
   "allowUnsafeCode": false,

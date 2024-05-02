@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
+using S1rDev10us.UnityHelpers.ExtensionMethods;
 
 namespace S1rDev10us.UnityHelpers.Tests.Editor.ExtensionMethods {
 	[TestFixture]

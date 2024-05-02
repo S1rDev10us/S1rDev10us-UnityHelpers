@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 using UnityEngine;
-
+namespace S1rDev10us.UnityHelpers.ExtensionMethods {
 public static class VectorExtensions {
 
 	#region Vector3
@@ -66,4 +66,4 @@ public static class VectorExtensions {
 	}
 	#endregion
 
-}
+}}

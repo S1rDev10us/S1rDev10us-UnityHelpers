@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using S1rDev10us.UnityHelpers.ExtensionMethods;
 using UnityEngine;
 
 namespace S1rDev10us.UnityHelpers.Tests.Editor.ExtensionMethods {
