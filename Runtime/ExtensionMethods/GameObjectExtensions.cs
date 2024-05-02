@@ -14,7 +14,7 @@ public static class GameObjectExtensions {
 
 
 	/// <summary>
-	/// Returns null if the object is null or if the object is about to be deleted but is not actually null
+	/// Returns null if the object is null or if the object has been destroyed but is not null.
 	/// </summary>
 	/// <param name="obj">The object to be checked</param>
 	/// <typeparam name="T">The type of the object</typeparam>
@@ -24,11 +24,11 @@ public static class GameObjectExtensions {
 
 	/// <summary>
 	/// Removes a GameObject, component or asset.
-	/// 
+	///
 	/// <para>
-	/// This version of the function can be called on the object instead of 
+	/// This version of the function can be called on the object instead of
 	/// </para>
-	/// 
+	///
 	/// https://docs.unity3d.com/ScriptReference/Object.Destroy.html
 	/// </summary>
 	/// <example>
