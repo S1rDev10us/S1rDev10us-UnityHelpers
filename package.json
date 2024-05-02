@@ -1,0 +1,14 @@
+﻿{
+  "name": "io.github.s1rdev10us.unity-helpers",
+  "version": "1.0.0",
+  "displayName": "S1rDev10us's UnityHelpers",
+  "description": "This is an example package",
+  "unity": "2021.3",
+  "documentationUrl": "https://github.com/S1rDev10us/S1rDev10us-UnityHelpers",
+  "changelogUrl": "https://github.com/S1rDev10us/S1rDev10us-UnityHelpers/CHANGELOG.md",
+  "licensesUrl": "https://github.com/S1rDev10us/S1rDev10us-UnityHelpers/LICENSE.md",
+  "author": {
+    "name": "S1rDev10us",
+    "url": "https://s1rdev10us.github.io"
+  }
+}
