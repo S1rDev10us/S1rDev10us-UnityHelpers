@@ -1,0 +1,16 @@
+﻿{
+  "name": "S1rDev10us.UnityHelpers.Tests",
+  "rootNamespace": "S1rDev10us.UnityHelpers.Tests",
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "references": [
+    "S1rDev10us.UnityHelpers"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [
+  ],
+  "excludePlatforms": []
+}

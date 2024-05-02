@@ -1,0 +1,18 @@
+﻿{
+  "name": "S1rDev10us.UnityHelpers.Editor.Tests",
+  "rootNamespace": "S1rDev10us.UnityHelpers.Tests.Editor",
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "references": [
+    "S1rDev10us.UnityHelpers"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "noEngineReferences": false
+}
