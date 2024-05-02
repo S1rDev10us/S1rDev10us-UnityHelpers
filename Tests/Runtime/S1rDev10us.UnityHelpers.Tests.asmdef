@@ -5,8 +5,7 @@
     "UNITY_INCLUDE_TESTS"
   ],
   "references": [
-    "S1rDev10us.UnityHelpers",
-    "S1rDev10us.UnityHelpers.ExtensionMethods"
+    "S1rDev10us.UnityHelpers"
   ],
   "optionalUnityReferences": [
     "TestAssemblies"
