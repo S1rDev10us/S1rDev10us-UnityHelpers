@@ -1,8 +1,8 @@
 ﻿{
   "name": "io.github.s1rdev10us.unity-helpers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "S1rDev10us's UnityHelpers",
-  "description": "This is an example package",
+  "description": "A set of helper functions for Unity by S1rDev10us",
   "unity": "2021.3",
   "documentationUrl": "https://github.com/S1rDev10us/S1rDev10us-UnityHelpers",
   "changelogUrl": "https://github.com/S1rDev10us/S1rDev10us-UnityHelpers/CHANGELOG.md",
