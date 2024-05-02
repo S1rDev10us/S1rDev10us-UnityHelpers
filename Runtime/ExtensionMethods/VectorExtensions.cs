@@ -2,10 +2,10 @@ using JetBrains.Annotations;
 using UnityEngine;
 
 public static class VectorExtensions {
-	
+
 	#region Vector3
 
-	
+
 
 	/// <summary>
 	/// Adds the x, y and z input to the vector
@@ -39,6 +39,7 @@ public static class VectorExtensions {
 	/// <returns>The constrained vector</returns>
 	[PublicAPI]
 	public static Vector3 MaxMagnitude(this Vector3 vector, float max = 1) {
+		max = Mathf.Abs(max);
 		if (vector.magnitude > max) {
 			return vector.normalized * max;
 		}
@@ -46,7 +47,7 @@ public static class VectorExtensions {
 		return vector;
 	}
 	#endregion
-	
+
 	#region Vector2
 	/// <summary>
 	/// Returns the vector with the magnitude constrained to be less than the input max which is 1 by default
@@ -56,6 +57,7 @@ public static class VectorExtensions {
 	/// <returns>The constrained vector</returns>
 	[PublicAPI]
 	public static Vector2 MaxMagnitude(this Vector2 vector, float max = 1) {
+		max = Mathf.Abs(max);
 		if (vector.magnitude > max) {
 			return vector.normalized * max;
 		}
@@ -63,5 +65,5 @@ public static class VectorExtensions {
 		return vector;
 	}
 	#endregion
-	
+
 }
