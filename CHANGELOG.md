@@ -1,3 +1,7 @@
+# 1.1.0
+
+- Added Optional struct and test
+
 # 1.0.1
 
 - Update package description
