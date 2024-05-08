@@ -1,3 +1,7 @@
+# 1.1.1
+
+- OrNull now has the `[CanBeNull]` attribute
+
 # 1.1.0
 
 - Added Optional struct and test

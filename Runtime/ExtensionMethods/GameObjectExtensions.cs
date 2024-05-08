@@ -20,7 +20,7 @@ namespace S1rDev10us.UnityHelpers.ExtensionMethods {
 		/// <param name="obj">The object to be checked</param>
 		/// <typeparam name="T">The type of the object</typeparam>
 		/// <returns>The object or null</returns>
-		[PublicAPI]
+		[PublicAPI,CanBeNull]
 		public static T OrNull<T>(this T obj) where T : Object => obj ? obj : null;
 
 		/// <summary>
