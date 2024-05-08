@@ -1,3 +1,7 @@
+# 1.1.2
+
+- The Destroy function parameter `T` has been renamed to `t` to reduce confusion with type parameters
+
 # 1.1.1
 
 - OrNull now has the `[CanBeNull]` attribute

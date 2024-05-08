@@ -40,8 +40,8 @@ namespace S1rDev10us.UnityHelpers.ExtensionMethods {
 		/// </code>
 		/// </example>
 		/// <param name="obj">The object to destroy.</param>
-		/// <param name="T">The optional amount of time to delay before destroying the object.</param>
+		/// <param name="t">The optional amount of time to delay before destroying the object.</param>
 		[PublicAPI]
-		public static void Destroy(this Object obj, float T = 0.0f) => Object.Destroy(obj, T);
+		public static void Destroy(this Object obj, float t = 0.0f) => Object.Destroy(obj, t);
 	}
 }
