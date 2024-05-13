@@ -1,3 +1,7 @@
+# 1.2.0
+
+- Added an `OrNull` function to the optional class which returns null if enabled is false and returns true otherwise
+
 # 1.1.2
 
 - The Destroy function parameter `T` has been renamed to `t` to reduce confusion with type parameters
