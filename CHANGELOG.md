@@ -1,3 +1,7 @@
+# 1.3.0
+
+- Added vector swizzles generated using tera
+
 # 1.2.0
 
 - Added an `OrNull` function to the optional class which returns null if enabled is false and returns true otherwise

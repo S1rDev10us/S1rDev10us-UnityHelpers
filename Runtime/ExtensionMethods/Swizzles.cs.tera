@@ -1,0 +1,48 @@
+using UnityEngine;
+{%- set_global coords = ["0","1","x","y","z","w"] -%}
+{%- set_global vectorTypes = [2,3,4] -%}
+
+{% macro getVar(var, first=false) -%}
+  {%- set_global coords = ["0","1","x","y","z","w"] -%}
+  {%- set_global vectorTypes = [2,3,4] -%}
+  {%- set literals = coords | slice(end=2) -%}
+  {%- if literals is containing(var) -%}
+    {{var}}
+  {%- else -%}
+    vec.{{var}}
+  {%- endif -%}
+{%- endmacro getVar %}
+
+namespace S1rDev10us.UnityHelpers{
+  {%- for inVectorType in vectorTypes %}
+    public static class Vector{{inVectorType}}Swizzles {
+      {%- for outVectorType in vectorTypes %}
+        #region Vector{{inVectorType}} -> Vector{{outVectorType}}
+          {%- for c1 in coords | slice(end=inVectorType+2) %}
+            {%- for c2 in coords | slice(end=inVectorType+2) %}
+              {%- if outVectorType == 2 %}
+                public static Vector{{outVectorType}} _{{c1}}{{c2}}(this Vector{{inVectorType}} vec) {
+                  return new Vector{{outVectorType}}({{self::getVar(var=c1)}}, {{self::getVar(var=c2)}});
+                }
+              {%- else %}
+                {%- for c3 in coords | slice(end=inVectorType+2) %}
+                  {%- if outVectorType == 3 %}
+                    public static Vector{{outVectorType}} _{{c1}}{{c2}}{{c3}}(this Vector{{inVectorType}} vec) {
+                      return new Vector{{outVectorType}}({{self::getVar(var=c1)}}, {{self::getVar(var=c2)}}, {{self::getVar(var=c3)}});
+                    }
+                  {%- else %}
+                    {%- for c4 in coords | slice(end=inVectorType+2) %}
+                        public static Vector{{outVectorType}} _{{c1}}{{c2}}{{c3}}{{c4}}(this Vector{{inVectorType}} vec) {
+                          return new Vector{{outVectorType}}({{self::getVar(var=c1)}}, {{self::getVar(var=c2)}}, {{self::getVar(var=c3)}}, {{self::getVar(var=c4)}});
+                        }
+                    {%- endfor %}
+                  {%- endif %}
+                {%- endfor %}
+              {%- endif %}
+            {%- endfor %}
+          {%- endfor %}
+        #endregion
+      {%- endfor %}
+    }
+  {%- endfor %}
+}
