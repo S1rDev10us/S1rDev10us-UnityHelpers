@@ -6,14 +6,60 @@ using S1rDev10us.UnityHelpers.ExtensionMethods;
 namespace S1rDev10us.UnityHelpers.Tests.Editor.ExtensionMethods {
 	[TestFixture]
 	public class SwizzleTests {
-		#region Special cases
+		#region Normal cases
+		[Test,
+			TestCase(0f, 0f, 0f,0f),
+			TestCase(0f, 1f, 2f,4f),
+			TestCase(1f, 0f, 0f,0f),
+			TestCase(0f, 1f, 0f,0f),
+			TestCase(0f, 0f, 1f,0f),
+			TestCase(0f, 0f, 0f,1f),
+		]
+		public void NormalCase_yx(float x, float y, float z, float w){
+			Vector2 vec2=new Vector2(x,y);
+			Vector3 vec3=new Vector3(x,y,z);
+			Vector4 vec4=new Vector4(x,y,z,w);
 
-		[Test]
-		public void SpecialCase_One() {
+			Vector2 yx=new Vector2(y,x);
+
+			Assert.AreEqual(vec2._yx(),yx);
+			Assert.AreEqual(vec3._yx(),yx);
+			Assert.AreEqual(vec4._yx(),yx);
+		}
+		[Test,
+			TestCase(0f, 0f, 0f,0f),
+			TestCase(0f, 1f, 2f,4f),
+			TestCase(1f, 0f, 0f,0f),
+			TestCase(0f, 1f, 0f,0f),
+			TestCase(0f, 0f, 1f,0f),
+			TestCase(0f, 0f, 0f,1f),
+		]
+		public void NormalCase_yy(float x, float y, float z, float w){
+			Vector2 vec2=new Vector2(x,y);
+			Vector3 vec3=new Vector3(x,y,z);
+			Vector4 vec4=new Vector4(x,y,z,w);
+
+			Vector2 yy=new Vector2(y,y);
+
+			Assert.AreEqual(vec2._yy(),yy);
+			Assert.AreEqual(vec3._yy(),yy);
+			Assert.AreEqual(vec4._yy(),yy);
+		}
+		#endregion
+
+		#region Special cases
+		[Test,
+			TestCase(0f, 0f, 0f,0f),
+			TestCase(0f, 1f, 2f,4f),
+			TestCase(1f, 0f, 0f,0f),
+			TestCase(0f, 1f, 0f,0f),
+			TestCase(0f, 0f, 1f,0f),
+			TestCase(0f, 0f, 0f,1f),]
+		public void SpecialCase_One(float x,float y,float z, float w) {
 			// Arrange
-			Vector2 vec2=Vector2.zero;
-			Vector3 vec3=Vector3.zero;
-			Vector4 vec4=Vector4.zero;
+			Vector2 vec2=new Vector2(x,y);
+			Vector3 vec3=new Vector3(x,y,z);
+			Vector4 vec4=new Vector4(x,y,z,w);
 
 			// Act
 			vec2=vec2._11();
@@ -25,12 +71,18 @@ namespace S1rDev10us.UnityHelpers.Tests.Editor.ExtensionMethods {
 			Assert.AreEqual(vec3,Vector3.one);
 			Assert.AreEqual(vec4,Vector4.one);
 		}
-		[Test]
-		public void SpecialCase_Zero() {
+		[Test,
+			TestCase(0f, 0f, 0f,0f),
+			TestCase(0f, 1f, 2f,4f),
+			TestCase(1f, 0f, 0f,0f),
+			TestCase(0f, 1f, 0f,0f),
+			TestCase(0f, 0f, 1f,0f),
+			TestCase(0f, 0f, 0f,1f),]
+		public void SpecialCase_Zero(float x,float y,float z, float w) {
 			// Arrange
-			Vector2 vec2=Vector2.one;
-			Vector3 vec3=Vector3.one;
-			Vector4 vec4=Vector4.one;
+			Vector2 vec2=new Vector2(x,y);
+			Vector3 vec3=new Vector3(x,y,z);
+			Vector4 vec4=new Vector4(x,y,z,w);
 
 			// Act
 			vec2=vec2._00();
@@ -42,11 +94,17 @@ namespace S1rDev10us.UnityHelpers.Tests.Editor.ExtensionMethods {
 			Assert.AreEqual(vec3,Vector3.zero);
 			Assert.AreEqual(vec4,Vector4.zero);
 		}
-		[Test]
-		public void SpecialCase_Self() {
-			Vector2 vec2=Vector2.one;
-			Vector3 vec3=Vector3.one;
-			Vector4 vec4=Vector4.one;
+		[Test,
+			TestCase(0f, 0f, 0f,0f),
+			TestCase(0f, 1f, 2f,4f),
+			TestCase(1f, 0f, 0f,0f),
+			TestCase(0f, 1f, 0f,0f),
+			TestCase(0f, 0f, 1f,0f),
+			TestCase(0f, 0f, 0f,1f),]
+		public void SpecialCase_Self(float x,float y,float z, float w) {
+			Vector2 vec2=new Vector2(x,y);
+			Vector3 vec3=new Vector3(x,y,z);
+			Vector4 vec4=new Vector4(x,y,z,w);
 
 			Assert.AreEqual(vec2._xy(),vec2);
 			Assert.AreEqual(vec3._xyz(),vec3);

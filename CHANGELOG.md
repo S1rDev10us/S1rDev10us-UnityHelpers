@@ -1,3 +1,7 @@
+# 1.3.3
+
+- Add more vector swizzle tests and parameterize them
+
 # 1.3.2
 
 - Make task test check time taken is accurate
@@ -9,7 +13,7 @@
 
 # 1.3.0
 
-- Added vector swizzles generated using tera
+- Added vector swizzles generated using Tera
 
 # 1.2.0
 
@@ -21,7 +25,7 @@
 
 # 1.1.1
 
-- OrNull now has the `[CanBeNull]` attribute
+- `OrNull` now has the `[CanBeNull]` attribute
 
 # 1.1.0
 
