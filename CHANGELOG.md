@@ -1,3 +1,7 @@
+# 1.3.2
+
+- Make task test check time taken is accurate
+
 # 1.3.1
 
 - Added vector swizzle tests
@@ -34,4 +38,3 @@
 
 - Import from previous, non Unity package version of package
 - Add Unit Tests
-- 
