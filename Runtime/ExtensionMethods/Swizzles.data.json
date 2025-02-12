@@ -1,0 +1,13 @@
+{
+  "specialCases": {
+    "xy": "vec",
+    "xyz": "vec",
+    "xyzw": "vec",
+    "00": "Vector2.zero",
+    "000": "Vector3.zero",
+    "0000": "Vector4.zero",
+    "11": "Vector2.one",
+    "111": "Vector3.one",
+    "1111": "Vector4.one"
+  }
+}

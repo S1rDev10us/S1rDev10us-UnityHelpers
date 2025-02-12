@@ -2,6 +2,8 @@ using UnityEngine;
 {%- set_global coords = ["0","1","x","y","z","w"] -%}
 {%- set_global vectorTypes = [2,3,4] -%}
 
+{#- specialCases comes from data file -#}
+
 {% macro getVar(var, first=false) -%}
   {%- set_global coords = ["0","1","x","y","z","w"] -%}
   {%- set_global vectorTypes = [2,3,4] -%}
@@ -11,38 +13,55 @@ using UnityEngine;
   {%- else -%}
     vec.{{var}}
   {%- endif -%}
-{%- endmacro getVar %}
+{%- endmacro getVar -%}
+
+{%- macro render(coords, iVec, oVec, specialCases) -%}
+  {%- set coordString = coords | join(sep="") %}
+  {%- set isSpecialCase = specialCases is containing(coordString) %}
+  public static {{ oVec }} _{{ coordString }}(this {{ iVec }} vec) {
+    return {% if isSpecialCase -%}
+      {{ specialCases[coordString] }}
+    {%- else -%}
+      new {{ oVec }}(
+        {%- for coord in coords -%}
+          {%- if not loop.first -%}
+            , {% endif -%}
+          {{- self::getVar(var=coord) -}}
+        {%- endfor -%}
+      )
+    {%- endif -%};
+  }
+{%- endmacro render %}
 
 namespace S1rDev10us.UnityHelpers{
   {%- for inVectorType in vectorTypes %}
-    public static class Vector{{inVectorType}}Swizzles {
+    {%- set iVec = "Vector" ~ inVectorType %}
+  public static class {{iVec}}Swizzles {
       {%- for outVectorType in vectorTypes %}
-        #region Vector{{inVectorType}} -> Vector{{outVectorType}}
+        {%- set oVec = "Vector" ~ outVectorType %}
+    #region {{iVec}} -> {{oVec}}
           {%- for c1 in coords | slice(end=inVectorType+2) %}
             {%- for c2 in coords | slice(end=inVectorType+2) %}
               {%- if outVectorType == 2 %}
-                public static Vector{{outVectorType}} _{{c1}}{{c2}}(this Vector{{inVectorType}} vec) {
-                  return new Vector{{outVectorType}}({{self::getVar(var=c1)}}, {{self::getVar(var=c2)}});
-                }
+                {%- set currentCoords = [c1, c2] %}
+                {{- self::render(coords=currentCoords,iVec=iVec,oVec=oVec,specialCases=specialCases) | indent()}}
               {%- else %}
                 {%- for c3 in coords | slice(end=inVectorType+2) %}
                   {%- if outVectorType == 3 %}
-                    public static Vector{{outVectorType}} _{{c1}}{{c2}}{{c3}}(this Vector{{inVectorType}} vec) {
-                      return new Vector{{outVectorType}}({{self::getVar(var=c1)}}, {{self::getVar(var=c2)}}, {{self::getVar(var=c3)}});
-                    }
+                    {%- set currentCoords = [c1, c2, c3] %}
+                    {{- self::render(coords=currentCoords,iVec=iVec,oVec=oVec,specialCases=specialCases) | indent()}}
                   {%- else %}
                     {%- for c4 in coords | slice(end=inVectorType+2) %}
-                        public static Vector{{outVectorType}} _{{c1}}{{c2}}{{c3}}{{c4}}(this Vector{{inVectorType}} vec) {
-                          return new Vector{{outVectorType}}({{self::getVar(var=c1)}}, {{self::getVar(var=c2)}}, {{self::getVar(var=c3)}}, {{self::getVar(var=c4)}});
-                        }
+                        {%- set currentCoords = [c1, c2, c3, c4] %}
+                        {{- self::render(coords=currentCoords,iVec=iVec,oVec=oVec,specialCases=specialCases) | indent()}}
                     {%- endfor %}
                   {%- endif %}
                 {%- endfor %}
               {%- endif %}
             {%- endfor %}
           {%- endfor %}
-        #endregion
-      {%- endfor %}
-    }
+    #endregion
+  {% endfor -%}
+  }
   {%- endfor %}
 }

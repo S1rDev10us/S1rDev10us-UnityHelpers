@@ -1,3 +1,8 @@
+# 1.3.1
+
+- Added vector swizzle tests
+- Simplified vector swizzles for some special cases
+
 # 1.3.0
 
 - Added vector swizzles generated using tera
