@@ -1,3 +1,8 @@
+# 1.3.4
+
+- Move swizzles to correct namespace
+- Fix license and changelog urls
+
 # 1.3.3
 
 - Add more vector swizzle tests and parameterize them

@@ -1,12 +1,12 @@
 ﻿{
   "name": "io.github.s1rdev10us.unity-helpers",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "displayName": "S1rDev10us's UnityHelpers",
   "description": "A set of helper functions for Unity by S1rDev10us",
   "unity": "2021.3",
   "documentationUrl": "https://github.com/S1rDev10us/S1rDev10us-UnityHelpers",
-  "changelogUrl": "https://github.com/S1rDev10us/S1rDev10us-UnityHelpers/CHANGELOG.md",
-  "licensesUrl": "https://github.com/S1rDev10us/S1rDev10us-UnityHelpers/LICENSE.md",
+  "changelogUrl": "https://github.com/S1rDev10us/S1rDev10us-UnityHelpers/blob/master/CHANGELOG.md",
+  "licensesUrl": "https://github.com/S1rDev10us/S1rDev10us-UnityHelpers/blob/master/LICENSE.md",
   "author": {
     "name": "S1rDev10us",
     "url": "https://s1rdev10us.github.io"

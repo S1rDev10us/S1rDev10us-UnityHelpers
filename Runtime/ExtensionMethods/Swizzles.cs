@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace S1rDev10us.UnityHelpers{
+namespace S1rDev10us.UnityHelpers.ExtensionMethods{
   public static class Vector2Swizzles {
     #region Vector2 -> Vector2
       public static Vector2 _00(this Vector2 vec) {

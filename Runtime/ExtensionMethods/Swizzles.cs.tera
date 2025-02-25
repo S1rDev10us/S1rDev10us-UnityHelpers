@@ -33,7 +33,7 @@ using UnityEngine;
   }
 {%- endmacro render %}
 
-namespace S1rDev10us.UnityHelpers{
+namespace S1rDev10us.UnityHelpers.ExtensionMethods{
   {%- for inVectorType in vectorTypes %}
     {%- set iVec = "Vector" ~ inVectorType %}
   public static class {{iVec}}Swizzles {
